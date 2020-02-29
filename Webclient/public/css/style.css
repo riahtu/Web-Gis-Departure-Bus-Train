@@ -1,0 +1,671 @@
+* {
+	box-sizing: border-box;
+}
+
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+body {
+	background: #fff;
+}
+
+a:hover {
+	cursor: pointer;
+}
+
+p.warning {
+	color: #c93232;
+}
+
+form.form div.input-group,
+form.form input,
+form.form textarea {
+	margin-bottom: 5px;
+}
+
+table tr td span.noData {
+	color: #e0e0e0;
+}
+
+/*bar*/
+	.navbar-default {
+		border-radius: 0;
+		background-color: white;
+		border: none;
+		margin-bottom: 0px;
+		font-size: 14px;
+	}
+
+	.navbar-default.navbarBorder {
+		border-bottom: 1px solid #ddd;
+		margin-bottom: 20px;
+	}
+
+	.con_petaBr {
+		margin-bottom: 20px;
+		border-top: 1px solid #ddd;
+		border-bottom: 1px solid #ddd;
+	}
+
+	.con_petaBG {
+		background-color: #F7F7F7;
+	}
+
+	.sideBar {
+		padding: 20px 25px;
+		height: 100%;
+		display: block;
+		position: relative;
+	}
+
+	.sideBar h1 {
+		color: #888;
+		text-align: center;
+	}
+
+	.sideBar p {
+		margin-top: 30px;
+		color: #888;
+	}
+
+	.sideBar ul {
+		padding: 0;
+		margin: 0;
+		list-style-type: none;
+		background-color: white;
+	}
+
+	.sideBar ul#location {
+		margin-bottom: 5px;
+		overflow: hidden;
+	}
+
+	.sideBar ul#location:hover {
+		overflow: auto;
+	}
+
+	.sideBar ul#location li span.historyBy {
+		color: #5ac8dd;
+		font-size: 10px;
+	}
+
+	.sideBar ul li {
+		position: relative;
+		display: block;
+		padding: 5px 20px;
+	}
+
+	.sideBar ul li span#timepicker {
+		position: absolute;
+		right: 22px;
+		top: calc(50% - 9px);
+		background-color: white;
+		padding: 5px;
+		display: none;
+	}
+
+	.sideBar span#timepicker:hover {
+		cursor: pointer;
+	}
+
+	.sideBar ul li a {
+		color: #333;
+		text-transform: capitalize;
+	}
+
+	.sideBar ul li a:hover {
+		cursor: pointer;
+	}
+
+	.sideBar input {
+		width: 100%;
+		border: none;
+		padding: 5px 5px;
+		padding-right:25px;
+		border-bottom: 1px solid #f2f2f2;
+	}
+
+	.sideBar div.boxpicker {
+		position: absolute;
+		padding: 10px;
+		z-index: 9999;
+		background-color: #fcfbf4;
+		width: 250px;
+		border: 1px solid #f0f0f0;
+		display: none;
+	}
+
+	.sideBar div.boxpicker::before {
+		content: '';
+		position: absolute;
+		border-width: 5px;
+		border-style: solid;
+		border-color: transparent transparent #f0f0f0 transparent;
+		top: -10px;
+		right: 7px;
+	}
+
+	.sideBar div.boxpicker .input-group {
+		width: 100%;
+	}
+
+	.sideBar div.boxpicker input {
+		width: 100%;
+		border: none;
+		padding: 5px;
+		width: 75%;
+		float: left;
+		padding-left: 15px;
+	}
+
+	.sideBar div.boxpicker label {
+		font-size: 14px;
+		width: 25%;
+		float: left;
+		color: #7f7f7f;
+	}
+
+	.sideBar div.boxpicker:hover {
+		cursor: default;
+	}
+
+	ul#routes {
+		margin-top: 20px;
+	}
+
+	ul#routes li.loadingRoutes {
+		text-align: center;
+		display: none;
+	}
+
+	ul#routes li.loadingRoutes.muncul {
+		display: block;
+	}
+
+	ul#routes li img {
+		width: 50%;
+	}
+
+	@media (max-width: 768px) {
+		ul#routes li img {
+			width: 20%;
+		}
+	}
+
+	@media (max-width: 991px) {
+		ul#routes li img {
+			width: 20%;
+		}
+	}
+
+	@media (max-width: 360px) {
+		ul#routes li img {
+			width: 100%;
+		}
+	}
+
+	ul#routes li.loadingRoutes {
+		display: none;
+	}
+
+	.peta img {
+		width: 100%;
+	}
+
+/*login*/
+	.bgModal {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background-color: rgba(0,0,0,.5);
+		display: none;
+	}
+
+	.modalLogin {
+		position: fixed;
+		z-index: 2;
+		top: 50%;
+		left: 50%;
+		background-color: white;
+		width: 500px;
+		padding: 35px;
+		padding-top: 70px;
+		margin-left: -250px;
+		margin-top: -150px;
+		display: none;
+	}
+
+	.bgModal.muncul,
+	.modalLogin.muncul {
+		display: block;
+		-webkit-animation: fadeInModal 1s;
+		-moz-animation: fadeInModal 1s;
+		animation: fadeInModal 1s;
+	}
+
+	.bgModal.hide,
+	.modalLogin.hide {
+		display: block !important;
+		animation: fadeOutModal 1s;
+		-webkit-animation: fadeOutModal 1s;
+		-moz-animation: fadeOutModal 1s;
+
+		animation-fill-mode: forwards;
+		-webkit-animation-fill-mode: forwards;
+		-moz-animation-fill-mode: forwards;
+	}
+
+	@-webkit-keyframes fadeInModal {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+
+	@-moz-keyframes fadeInModal {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+
+	@keyframes fadeInModal {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+
+	@-webkit-keyframes fadeOutModal {
+		0% {
+			opacity: 1;
+		}
+		100% {
+			opacity: 0;
+		}
+	}
+
+	@-moz-keyframes fadeOutModal {
+		0% {
+			opacity: 1;
+		}
+		100% {
+			opacity: 0;
+		}
+	}
+
+	@keyframes fadeOutModal {
+		0% {
+			opacity: 1;
+		}
+		100% {
+			opacity: 0;
+		}
+	}
+
+	.modalLogin h1 {
+		color: #B3B3B3;
+		position: absolute;
+		top: -20px;
+		left: 0;
+		right: 0;
+		background-color: #f2f2f2;
+		text-align: center;
+		padding: 10px 0;
+	}
+
+	.modalLogin input {
+		margin-bottom: 15px;
+		padding: 22px 13px;
+		box-shadow: none;
+	}
+
+	.modalLogin button,
+	.modalLogin a {
+		width: 100%;
+	}
+
+	.modalLogin button {
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+
+	.modalLogin a {
+		border-bottom-left-radius: 0;
+		border-top-left-radius: 0;
+	}
+
+	form.form div.input-group span#username {
+		font-size: 12px;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	form.form div.input-group span#password {
+		font-size: 14px;
+	}
+
+	form.form div.input-group span#password:hover {
+		cursor: pointer;
+		background-color: white;
+	}
+
+	@media (max-width: 767px) {
+		.modalLogin button,
+		.modalLogin a {
+			border-radius: 4px;
+		}
+
+		.modalLogin a {
+			margin-top: 5px;
+		}
+	}
+
+	@media (max-width: 600px) {
+		.modalLogin {
+			left: 15px;
+			right: 15px;
+			margin-left: auto;
+			margin-right: auto;
+			width: auto;
+		}
+	}
+
+/*map*/
+	map {
+		overflow: hidden;
+	}
+
+	map a.namaArea {
+		position: absolute; 
+		top: 410px; 
+		left: 210px;
+		color: #575757;
+		font-weight: bold;
+	}
+
+	map div.ketArea {
+		display: none;
+		position: absolute;
+		background-color: rgba(255,255,255,.8); 
+		width: 150px;
+		padding: 5px;
+	}
+
+	map div.ketArea p {
+		font-size: 11px;
+		margin-top: 5px;
+		font-family: tahoma;
+	}
+
+	map div.ketArea img {
+		width: 100%;
+	}
+
+	map div.ketArea::after {
+		content: '';
+		position: absolute;
+		border-width: 5px;
+		border-style: solid;
+		top: -10px;
+		left: 1px;
+		border-color: transparent transparent rgba(255,255,255,.8) transparent;
+	}
+
+/*placelist*/
+	.placeList table h3 {
+		margin: 0;
+	}
+
+	.placeList table a {
+		color: #333;
+	}
+
+/*alert*/
+	.alert {
+		position: absolute;
+		bottom: 15px;
+		right: 15px;
+		display: none;
+		opacity: 0;
+		max-width: 400px;
+	}
+
+	@media (max-width: 360px) {
+		.alert {
+			left: 15px;
+		}
+	}
+
+	.alert.muncul {
+		display: block;
+		animation: opacityFadeIn .2s ease-in-out;
+		-webkit-animation: opacityFadeIn .2s ease-in-out;
+		-moz-animation: opacityFadeIn .2s ease-in-out;
+
+		animation-fill-mode: forwards;
+		-webkit-animation-fill-mode: forwards;
+		-moz-animation-fill-mode: forwards;
+	}
+
+	.alert.remove {
+		display: block !important;
+		animation: opacityFadeOut .2s ease-in-out;
+		-webkit-animation: opacityFadeOut .2s ease-in-out;
+		-moz-animation: opacityFadeOut .2s ease-in-out;
+
+		animation-fill-mode: forwards;
+		-webkit-animation-fill-mode: forwards;
+		-moz-animation-fill-mode: forwards;
+	}
+
+	@keyframes opacityFadeIn {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+
+	@-webkit-keyframes opacityFadeIn {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+	@-moz-keyframes opacityFadeIn {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+
+	@keyframes opacityFadeOut {
+		0% {
+			opacity: 1;
+		}
+		100% {
+			opacity: 0;
+		}
+	}
+
+	@-webkit-keyframes opacityFadeOut {
+		0% {
+			opacity: 1;
+		}
+		100% {
+			opacity: 0;
+		}
+	}
+	@-moz-keyframes opacityFadeOut {
+		0% {
+			opacity: 1;
+		}
+		100% {
+			opacity: 0;
+		}
+	}
+
+/*loaderNavbar*/
+	.conNavbarLoader {
+		position: fixed;
+		top: 0;
+		width: 100%;
+		height: 4px;
+		background-color: #eee;
+		z-index: 999999;
+		display: none;
+	}
+
+	.conNavbarLoader.muncul {
+		display: block;
+		animation-fill-mode: forwards;
+		-webkit-animation-fill-mode: forwards;
+		-moz-animation-fill-mode: forwards;
+	}
+
+	.conNavbarLoader.remove {
+		display: block;
+		animation: navbarLoaderFadeOut .2s ease-in-out;
+		-webkit-animation: navbarLoaderFadeOut .2s ease-in-out;
+		-moz-animation: navbarLoaderFadeOut .2s ease-in-out;
+
+		animation-fill-mode: forwards;
+		-webkit-animation-fill-mode: forwards;
+		-moz-animation-fill-mode: forwards;
+	}
+
+	@keyframes navbarLoaderFadeOut {
+		0% {
+			opacity: 1;
+		}
+		100% {
+			opacity: 0;
+		}
+	}
+
+	.loaderNavbar {
+		width: 0%;
+		height: 4px;
+		background-color: #38d0cf;
+	}
+
+	.loaderNavbar.width80 {
+		animation: width80 1.5s ease-in-out;
+		-webkit-animation: width80 1.5s ease-in-out;
+		-moz-animation: width80 1.5s ease-in-out;
+
+		animation-fill-mode: forwards;
+		-webkit-animation-fill-mode: forwards;
+		-moz-animation-fill-mode: forwards;
+	}
+
+	.loaderNavbar.width100 {
+		animation: width100 1.5s ease-in-out;
+		-webkit-animation: width100 1.5s ease-in-out;
+		-moz-animation: width100 1.5s ease-in-out;
+
+		width: 100%;
+	}
+
+	@-webkit-keyframes width80 {
+		0% {
+			width: 0%;
+		}
+		100% {
+			width: 80%;
+		}
+	}
+
+	@-moz-keyframes width80 {
+		0% {
+			width: 0%;
+		}
+		100% {
+			width: 80%;
+		}
+	}
+
+	@keyframes width80 {
+		0% {
+			width: 0%;
+		}
+		100% {
+			width: 80%;
+		}
+	}
+
+	@-webkit-keyframes width100 {
+		0% {
+			width: 80%;
+		}
+		100% {
+			width: 100%;
+		}
+	}
+
+	@-moz-keyframes width100 {
+		0% {
+			width: 80%;
+		}
+		100% {
+			width: 100%;
+		}
+	}
+
+	@keyframes width100 {
+		0% {
+			width: 80%;
+		}
+		100% {
+			width: 100%;
+		}
+	}
+
+/*cf*/
+	.cf:before,
+	.cf:after {
+		content: " "; /* 1 */
+		display: table; /* 2 */
+	}
+
+	.cf:after {
+		clear: both;
+	}
+
+	/* for IE 6/7 only */
+	.cf {
+		*zoom: 1;
+	}
+
+/*global*/
+	.vertikalCenter {
+		vertical-align: middle !important;
+	}
+
+	.horizontalCenter {
+		text-align: center !important;
+	}
+
+	.marginBttom50px {
+		margin-bottom: 50px;
+	}
+
+	.nopadding-all {
+		padding: 0;
+	}
