@@ -49,17 +49,17 @@ Memerlukan :
 Untuk menggunakan aplikasi kamu harus membuat schadule keberangkatan terlebih dahulu, dengan memanfaatkan aplikasi seperti POSTMAN atau INSOMNIA.
 
 Untuk Menambahkan Scahadule :  
-URl: POST - `localhost:8000/api/schedule?api_token=cab2384fe07bded068d9b0804423387c`
-Example Param : `
-	type : bus
-	line : 1
-	from_place_id : 2
-	to_place_id : 3
-	departure_time : 12:00:00
-	arrival_time : 11:50:00
-	distance : 100 km
-	speed : 1 Jam
-`
+1. URl: POST - `localhost:8000/api/schedule?api_token=cab2384fe07bded068d9b0804423387c`
+2. Example Param : 
+	- type : bus
+	- line : 1
+	- from_place_id : 2
+	- to_place_id : 3
+	- departure_time : 12:00:00
+	- arrival_time : 11:50:00
+	- distance : 100 km
+	- speed : 1 Jam
+
 > Perlu diperhatikan bahwa departure time dan arrival time relatif terhadap waktu nyata saat kamu mengakses aplikasi ini, jadi silahkan isi waktu dengan jarak sedikit lebih jauh dari kamu sekarang.
 
 1. Lakukan request dengan method post, url, dan param diatas.
@@ -70,13 +70,11 @@ Example Param : `
 
 ## Info Login Default
 ### Admin :
-----
 **No**|**Username**|**Password**
 :----:|:----:|:----:
 1|reza|reza
 
 ### User :
-----
 **No**|**Username**|**Password**
 :----:|:----:|:----:
 1|dian|dian
